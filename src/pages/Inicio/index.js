@@ -10,7 +10,6 @@ import videos from 'json/db.json'
 export default function Inicio() {
   return (
     <>
-      <Cabecalho />
       <Banner imagem="Home" />
       <Titulo>
         <h1>Lugar para guardar os filmes</h1>
@@ -20,7 +19,6 @@ export default function Inicio() {
           return <Card {...video} key={video.id} />
         })}
       </section>
-      <Rodape />
     </>
   )
 }

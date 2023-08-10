@@ -5,20 +5,20 @@ import styles from './Cabecalho.module.css'
 import CabecalhoLink from './CabecalhoLink/index ';
 
 export default function Cabecalho() {
-  return (
-    <header className={styles.cabecalho}>
-        <Link to="./">
-            <img src={logo} alt='Logo do cinetag'></img>
-        </Link>
+    return (
+        <header className={styles.cabecalho}>
+            <Link to="./">
+                <img src={logo} alt='Logo do cinetag'></img>
+            </Link>
 
-        <nav>
-            <CabecalhoLink url="./">
-                Home
-            </CabecalhoLink>
-            <CabecalhoLink url="./Favoritos">
-                Favoritos
-            </CabecalhoLink>
-        </nav>
-    </header>
-  )
+            <nav>
+                <CabecalhoLink url="./">
+                    Home
+                </CabecalhoLink>
+                <CabecalhoLink url="./Favoritos">
+                    Favoritos
+                </CabecalhoLink>
+            </nav>
+        </header>
+    )
 }

@@ -3,17 +3,22 @@ import styles from './Favoritos.module.css'
 import Banner from 'components/Banner'
 import Titulo from 'components/Titulo'
 import Card from 'components/Card'
+import { useFavoritoContext } from 'components/Contexto/Favoritos'
 
 export default function Favoritos() {
+  const { favorito } = useFavoritoContext();
+
   return (
-        <>
-            <Banner imagem='favoritos'/>
-            <Titulo>
-              <h1> Meus Favoritos</h1>
-            </Titulo>
-            <section className={styles.container}>
-              <Card id='1' titulo='Gato bonifácio' capa='https://thecatapi.com/api/images/get?format=src&type=png'></Card>
-            </section>
-        </>
+    <>
+      <Banner imagem='favoritos' />
+      <Titulo>
+        <h1> Meus Favoritos</h1>
+      </Titulo>
+      <section className={styles.container}>
+        {favorito.map((fav) => {
+          return <Card {...fav} key={fav.id} />
+        })}
+      </section>
+    </>
   )
 }

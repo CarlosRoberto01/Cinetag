@@ -2,8 +2,9 @@ import React from 'react';
 import style from './Player.module.css';
 import Banner from 'components/Banner';
 import Titulo from 'components/Titulo';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import videos from 'json/db.json'
+import NaoEncontrada from 'pages/NaoEncontrada';
 
 
 export default function Player() {
@@ -11,6 +12,9 @@ export default function Player() {
   const video = videos.find((video) => {
     return video.id === Number(parametros.id)
   });
+  if (!video) {
+    return <NaoEncontrada />
+  }
 
   return (
     <>
